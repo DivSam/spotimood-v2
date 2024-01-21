@@ -11,7 +11,7 @@ def generatePlaylist(data):
         data['nb_songs'] = '10'
 
     prompt = """
-    You are a DJ, when given a mood, you will generate a list of {} songs that match that mood. Here is an example of the desired format:
+    You are a DJ, when given a mood, you will generate a list of {} songs that match that mood, as well as the name of the playlist. Here is an example of the desired format:
 
     "Dreamy Drowsiness"
     "\"Stay\" by Rihanna ft. Mikky Ekko",
