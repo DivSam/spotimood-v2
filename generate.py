@@ -6,6 +6,7 @@ load_dotenv()
 
 
 def generatePlaylist(data):
+    print(data)
     if 'nb_songs' not in data:
         data['nb_songs'] = '10'
 
