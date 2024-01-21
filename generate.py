@@ -5,9 +5,12 @@ from dotenv import load_dotenv
 load_dotenv()
 
 
-def generatePlaylist(mood):
+def generatePlaylist(data):
+    if 'nb_songs' not in data:
+        data['nb_songs'] = '10'
+
     prompt = """
-    You are a DJ, when given a mood, you will generate a list of 10 songs that match that mood. Here is an example of the desired format:
+    You are a DJ, when given a mood, you will generate a list of {} songs that match that mood. Here is an example of the desired format:
 
     "Dreamy Drowsiness"
     "\"Stay\" by Rihanna ft. Mikky Ekko",
@@ -20,8 +23,8 @@ def generatePlaylist(mood):
     "\"To Build a Home\" by The Cinematic Orchestra",
     "\"Hurt\" by Johnny Cash",
     "\"Fade Into You\" by Mazzy Star"
-    """
-    
+    """.format(data['nb_songs'])
+
     client = OpenAI()
 
     completion = client.chat.completions.create(
@@ -29,7 +32,7 @@ def generatePlaylist(mood):
         messages=[
             {"role": "system", "content": prompt},
 
-            {"role": "user", "content": mood}
+            {"role": "user", "content": data['mood']}
         ]
     )
 

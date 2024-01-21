@@ -12,8 +12,8 @@ CORS(app)
 @cross_origin(origin='*', headers=['Content- Type', 'Authorization'])
 def generate():
     data = request.get_json()
-    return generatePlaylist(data['mood'])
+    return generatePlaylist(data)
 
 
 if __name__ == '__main__':
-    app.run(debug=True,  port=8080) 
+    app.run(debug=True,  port=8080)
