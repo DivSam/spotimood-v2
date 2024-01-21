@@ -2,6 +2,8 @@
 
 ## Python Service for Spotimood
 
+Had to remake repo due to complications
+
 - See https://github.com/TheVortex8/conuhacks-spotify-api for backend service calling Spotify API
 - See https://github.com/tmdeim-git/spotimood_front for UI
 
